@@ -11,9 +11,12 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : AppCompatActivity() {
+    lateinit var flashcardDatabase: FlashcardDatabase
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        flashcardDatabase = FlashcardDatabase(this)
         val flashcardQuestion = findViewById<TextView>(R.id.flashcard_question)
         val flashcardAnswer = findViewById<TextView>(R.id.flashcard_answer)
 
@@ -22,9 +25,9 @@ class MainActivity : AppCompatActivity() {
             if (data != null) { // Check that we have data returned
                 val string1 = data.getStringExtra("QUESTIONKEY") // 'string1' needs to match the key we used when we put the string in the Intent
                 val string2 = data.getStringExtra("ANSWERKEY")
-                // Log the value of the strings for easier debugging
-                Log.i("MainActivity", "Question: $string1")
-                Log.i("MainActivity", "Answer: $string2")
+                flashcardQuestion.text = "$string1"
+                flashcardAnswer.text = "$string2"
+
             } else {
                 Log.i("MainActivity", "Returned null data from AddCardActivity")
             }
@@ -46,4 +49,7 @@ class MainActivity : AppCompatActivity() {
             flashcardAnswer.visibility = View.GONE
         }
     }
+
+
+
 }
