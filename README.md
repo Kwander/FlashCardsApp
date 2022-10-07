@@ -1,7 +1,7 @@
 ## Lab 2
 
 ### App Description
-`TODO://` Displays Flashcard Questions 4 studying. Currently can change a single Flashcard. Made with Kotlin.
+Displays Flashcard Questions 4 studying. Currently can change a single Flashcard. Made with Kotlin.
 
 ### App Walk-though
 
