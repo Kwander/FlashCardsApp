@@ -37,6 +37,17 @@
         android:textSize="30sp" />
 
     <ImageView
+        android:layout_height="100dp"
+        android:layout_width="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="280dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/nextButton"
+        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+
+    <ImageView
         android:layout_height="60dp"
         android:layout_width="60dp"
         android:layout_alignParentStart="true"
