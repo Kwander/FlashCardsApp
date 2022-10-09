@@ -5,7 +5,7 @@ Displays Flashcard Questions 4 studying. Currently can add flashcards and go thr
 
 ### App Walk-though
 
-<img src="http://g.recordit.co/48jhxW0eSL.gif" width=200><br>
+<img src="http://g.recordit.co/cU1qPIFDfy.gif" width=200><br>
 
 
 ## Required
