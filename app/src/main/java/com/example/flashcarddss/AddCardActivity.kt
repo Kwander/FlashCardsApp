@@ -1,37 +1,46 @@
 package com.example.flashcarddss
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.EditText
-import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+
 
 class AddCardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_card)
 
-        val TheQuestion = findViewById<EditText>(R.id.editQuestion)
-        val TheAnswer = findViewById<EditText>(R.id.editAnswer)
-        //editAnswer editQuestion
 
-        findViewById<ImageView>(R.id.myReturnBtn).setOnClickListener {
-            finish()
+        findViewById<View>(R.id.myReturnBtn).setOnClickListener {
+            val finished = Intent(this, MainActivity::class.java)
+            startActivity(finished)
+
         }
-        findViewById<ImageView>(R.id.SaveBtn).setOnClickListener {
+
+        findViewById<View>(R.id.SaveBtn).setOnClickListener {
+            Intent(this, MainActivity::class.java)
+
             val data = Intent()
 
-            val questionString = TheQuestion.text.toString()
-            val answerString = TheAnswer.text.toString()
 
-            data.putExtra("QUESTIONKEY", questionString)
-            data.putExtra("ANSWERKEY", answerString)
+            data.putExtra(
+                "QUESTIONKEY",
+                findViewById<EditText>(R.id.editQuestion).text.toString()
+            )
 
-            setResult(RESULT_OK, data) // set result code and bundle data for response
+            data.putExtra(
+                "ANSWERKEY",
+                findViewById<EditText>(R.id.editAnswer).text.toString()
+            )
 
-            finish() // closes this activity and pass data to the original activity that launched this activity
+            setResult(RESULT_OK, data)
+
+            finish()
+
         }
 
-
     }
+
 }
